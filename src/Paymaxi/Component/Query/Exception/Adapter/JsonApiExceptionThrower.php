@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Paymaxi\Component\Query\Exception\Adapter;
 
-use Neomerx\JsonApi\Document\Error;
+use Neomerx\JsonApi\Schema\Error;
 use Neomerx\JsonApi\Exceptions\JsonApiException;
 use Paymaxi\Component\Query\Exception\QueryExceptionThrowerInterface;
 use Ramsey\Uuid\Uuid;
@@ -38,6 +38,7 @@ final class JsonApiExceptionThrower implements QueryExceptionThrowerInterface
 
         $error = new Error(
             $uuid,
+            null,
             null,
             'error',
             '400',
